@@ -58,3 +58,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS)
 
 };
+
+const uint16_t PROGMEM left_arrow_combo[] = {KC_Q, KC_H, COMBO_END};
+const uint16_t PROGMEM down_arrow_combo[] = {KC_Q, RSFT_T(KC_J), COMBO_END};
+const uint16_t PROGMEM up_arrow_combo[] = {KC_Q, RCTL_T(KC_K), COMBO_END};
+const uint16_t PROGMEM right_arrow_combo[] = {KC_Q, RGUI_T(KC_L), COMBO_END};
+combo_t key_combos[COMBO_COUNT] = {
+    COMBO(left_arrow_combo, KC_LEFT),
+    COMBO(down_arrow_combo, KC_DOWN),
+    COMBO(up_arrow_combo, KC_UP),
+    COMBO(right_arrow_combo, KC_RIGHT),
+};
