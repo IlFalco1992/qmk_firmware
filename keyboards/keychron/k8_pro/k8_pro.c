@@ -33,7 +33,7 @@
 
 typedef struct PACKED {
     uint8_t len;
-    uint8_t keycode[3];
+    uint8_t keycode[4];
 } key_combination_t;
 
 static uint32_t factory_timer_buffer            = 0;
@@ -41,11 +41,12 @@ static uint32_t power_on_indicator_timer_buffer = 0;
 static uint32_t siri_timer_buffer               = 0;
 static uint8_t  mac_keycode[4]                  = {KC_LOPT, KC_ROPT, KC_LCMD, KC_RCMD};
 
-key_combination_t key_comb_list[4] = {
-    {2, {KC_LWIN, KC_TAB}},        // Task (win)
-    {2, {KC_LWIN, KC_E}},          // Files (win)
-    {3, {KC_LSFT, KC_LGUI, KC_4}}, // Snapshot (mac)
-    {2, {KC_LWIN, KC_C}}           // Cortana (win)
+key_combination_t key_comb_list[5] = {
+    {2, {KC_LWIN, KC_TAB}},                  // Task (win)
+    {2, {KC_LWIN, KC_E}},                    // Files (win)
+    {4, {KC_LSFT, KC_LGUI, KC_LCTL, KC_4}},  // Snapshot (mac)
+    {2, {KC_LWIN, KC_C}},                    // Cortana (win)
+    {3, {KC_LGUI, KC_LCTL, KC_Q}},           // Lock (mac)
 };
 
 #ifdef KC_BLUETOOTH_ENABLE
@@ -94,6 +95,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
         case KC_FILE:
         case KC_SNAP:
         case KC_CTANA:
+        case KC_LOCK:
             if (record->event.pressed) {
                 for (uint8_t i = 0; i < key_comb_list[keycode - KC_TASK].len; i++)
                     register_code(key_comb_list[keycode - KC_TASK].keycode[i]);

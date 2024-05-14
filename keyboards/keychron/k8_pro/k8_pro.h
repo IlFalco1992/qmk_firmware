@@ -39,6 +39,7 @@ enum {
     KC_FILE,
     KC_SNAP,
     KC_CTANA,
+    KC_LOCK,
     KC_SIRI,
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
