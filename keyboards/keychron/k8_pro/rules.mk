@@ -6,4 +6,4 @@ SRC += matrix.c
 
 include keyboards/keychron/bluetooth/bluetooth.mk
 
-COMBO_ENABLE = yes
+#COMBO_ENABLE = yes
