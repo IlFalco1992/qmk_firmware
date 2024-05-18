@@ -7,3 +7,5 @@ SRC += matrix.c
 include keyboards/keychron/bluetooth/bluetooth.mk
 
 #COMBO_ENABLE = yes
+
+CAPS_WORD_ENABLE = yes
