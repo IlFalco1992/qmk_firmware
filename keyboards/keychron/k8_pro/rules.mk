@@ -9,3 +9,5 @@ include keyboards/keychron/bluetooth/bluetooth.mk
 #COMBO_ENABLE = yes
 
 CAPS_WORD_ENABLE = yes
+
+TAP_DANCE_ENABLE = yes
