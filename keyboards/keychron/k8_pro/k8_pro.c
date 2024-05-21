@@ -42,11 +42,11 @@ static uint32_t siri_timer_buffer               = 0;
 static uint8_t  mac_keycode[4]                  = {KC_LOPT, KC_ROPT, KC_LCMD, KC_RCMD};
 
 key_combination_t key_comb_list[5] = {
-    {2, {KC_LWIN, KC_TAB}},                  // Task (win)
-    {2, {KC_LWIN, KC_E}},                    // Files (win)
-    {4, {KC_LSFT, KC_LGUI, KC_LCTL, KC_4}},  // Snapshot (mac)
-    {2, {KC_LWIN, KC_C}},                    // Cortana (win)
-    {3, {KC_LGUI, KC_LCTL, KC_Q}},           // Lock (mac)
+    {2, {KC_LWIN, KC_TAB}},                 // Task (win)
+    {2, {KC_LWIN, KC_E}},                   // Files (win)
+    {4, {KC_LSFT, KC_LGUI, KC_LCTL, KC_4}}, // Snapshot (mac)
+    {2, {KC_LWIN, KC_C}},                   // Cortana (win)
+    {3, {KC_LGUI, KC_LCTL, KC_Q}},          // Lock (mac)
 };
 
 #ifdef KC_BLUETOOTH_ENABLE
