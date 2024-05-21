@@ -111,6 +111,9 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 siri_timer_buffer = sync_timer_read32() | 1;
             }
             return false; // Skip all further processing of this key
+        case LAYER_CLEAR:
+            layer_clear();
+            return false; // Skip all further processing of this key
 #ifdef KC_BLUETOOTH_ENABLE
         case BT_HST1 ... BT_HST3:
             if (get_transport() == TRANSPORT_BLUETOOTH) {
