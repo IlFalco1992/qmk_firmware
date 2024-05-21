@@ -204,6 +204,16 @@
             "shortName": "Lock"
         },
         {
+            "name": "Siri",
+            "title": "Siri in MacOS",
+            "shortName": "Siri"
+        },
+        {
+            "name": "Clear layers",
+            "title": "Clear all layers",
+            "shortName": "CLayers"
+        },
+        {
             "name": "Bluetooth Host 1",
             "title": "Bluetooth Host 1",
             "shortName": "BTH1"
