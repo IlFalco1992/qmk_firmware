@@ -113,6 +113,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             return false; // Skip all further processing of this key
         case LAYER_CLEAR:
             layer_clear();
+            clear_mods();
             return false; // Skip all further processing of this key
 #ifdef KC_BLUETOOTH_ENABLE
         case BT_HST1 ... BT_HST3:
