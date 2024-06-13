@@ -42,6 +42,7 @@ enum {
     KC_LOCK,
     KC_SIRI,
     LAYER_CLEAR,
+    KC_EUR,
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
     BT_HST2,

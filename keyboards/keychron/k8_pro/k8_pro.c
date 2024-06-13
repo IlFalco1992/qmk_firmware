@@ -115,6 +115,17 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
             layer_clear();
             clear_mods();
             return false; // Skip all further processing of this key
+        case KC_EUR:
+            if (record->event.pressed) {
+                register_code(KC_RSFT);
+                register_code(KC_LALT);
+                register_code(KC_2);
+            } else {
+                unregister_code(KC_RSFT);
+                unregister_code(KC_LALT);
+                unregister_code(KC_2);
+            }
+            return false; // Skip all further processing of this key
 #ifdef KC_BLUETOOTH_ENABLE
         case BT_HST1 ... BT_HST3:
             if (get_transport() == TRANSPORT_BLUETOOTH) {
