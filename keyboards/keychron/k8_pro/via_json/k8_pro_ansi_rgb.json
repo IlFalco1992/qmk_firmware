@@ -214,6 +214,11 @@
             "shortName": "CLayers"
         },
         {
+            "name": "Euro",
+            "title": "Euro symbol",
+            "shortName": "Euro"
+        },
+        {
             "name": "Bluetooth Host 1",
             "title": "Bluetooth Host 1",
             "shortName": "BTH1"
