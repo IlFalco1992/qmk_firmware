@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [EXTRA] = LAYOUT_tkl_ansi(
      KC_ESC,   KC_BRID,      KC_BRIU,             KC_MCTL,      KC_LPAD,      RGB_VAD,   RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,           KC_SNAP,   KC_SIRI,  RGB_MOD,
      KC_GRV,   KC_1,         KC_2,                KC_3,         KC_4,         KC_5,      KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,    KC_EQL,   KC_BSPC, KC_INS,    KC_HOME,  KC_PGUP,
-     KC_TAB,   KC_ESC,       KC_GRAVE,            KC_TILDE,     KC_TAB,       S(KC_TAB), KC_Y,     KC_U,     KC_PIPE,  KC_BSLS,  KC_BSPC,  KC_LBRC,    KC_RBRC,  KC_BSLS, KC_DEL,    KC_END,   KC_PGDN,
+     KC_TAB,   KC_ESC,       KC_GRAVE,            KC_TILDE,     KC_TAB,       S(KC_TAB), KC_LPAD,  KC_U,     KC_PIPE,  KC_BSLS,  KC_BSPC,  KC_LBRC,    KC_RBRC,  KC_BSLS, KC_DEL,    KC_END,   KC_PGDN,
      KC_CAPS,  KC_LOPTN,     KC_LCMMD,            KC_LCTL,      KC_LSFT,      KC_G,      KC_LEFT,  KC_DOWN,  KC_UP,    KC_RIGHT, KC_ENT,   KC_QUOT,              KC_ENT,
      KC_LSFT,                TG(NUMBERS_SYMBOLS), KC_X,         KC_C,         KC_V,      KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,
      KC_LCTL,  KC_LOPTN,     KC_LCMMD,                               LAYER_CLEAR,                                                KC_RCMMD, KC_ROPTN, MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
