@@ -14,24 +14,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include "color.h"
 #include "k8_pro.h"
 #include "keycodes.h"
 #include "keymap_us.h"
 #include QMK_KEYBOARD_H
 
-
 // Define a type for as many tap dance states as you need
-typedef enum {
-    TD_NONE,
-    TD_UNKNOWN,
-    TD_SINGLE_TAP,
-    TD_SINGLE_HOLD,
-    TD_DOUBLE_TAP,
-    TD_DOUBLE_HOLD
-} td_state_t;
+typedef enum { TD_NONE, TD_UNKNOWN, TD_SINGLE_TAP, TD_SINGLE_HOLD, TD_DOUBLE_TAP, TD_DOUBLE_HOLD } td_state_t;
 
 typedef struct {
-    bool is_press_action;
+    bool       is_press_action;
     td_state_t state;
 } td_tap_t;
 
@@ -92,7 +85,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_TRNS,  KC_TRNS,  KC_TRNS,                                KC_TRNS,                                KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS,  KC_TRNS),
 
 [EXTRA] = LAYOUT_tkl_ansi(
-     KC_ESC,   KC_BRID,      KC_BRIU,             KC_MCTL,      KC_LPAD,      RGB_VAD,   RGB_VAI,  KC_MPRV,    KC_MPLY,    KC_MNXT,     KC_MUTE,    KC_VOLD,    KC_VOLU,           KC_SNAP,   KC_SIRI,  RGB_MOD,
+     KC_ESC,   KC_BRID,      KC_BRIU,             KC_MCTL,      KC_LPAD,      RGB_VAD,   RGB_VAI,  KC_MPRV,    KC_MPLY,    KC_MNXT,     KC_MUTE,    KC_VOLD,    KC_VOLU,           KC_SNAP,   RGB_TOG,  KC_LOCK,
      KC_GRV,   KC_1,         KC_2,                KC_3,         KC_4,         KC_5,      KC_6,     KC_7,       KC_8,       KC_9,        KC_0,       KC_MINS,    KC_EQL,   KC_BSPC, KC_INS,    KC_HOME,  KC_PGUP,
      KC_TAB,   KC_ESC,       KC_GRAVE,            KC_TILDE,     KC_TAB,       S(KC_TAB), KC_LPAD,  KC_U,       KC_PIPE,    KC_BSLS,     KC_BSPC,    KC_LBRC,    KC_RBRC,  KC_BSLS, KC_DEL,    KC_END,   KC_PGDN,
      KC_CAPS,  KC_LOPTN,     KC_LCMMD,            KC_LCTL,      KC_LSFT,      KC_G,      KC_LEFT,  KC_DOWN,    KC_UP,      KC_RIGHT,    KC_ENT,     KC_QUOT,              KC_ENT,
@@ -182,4 +175,44 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         default:
             return TAPPING_TERM;
     }
+}
+
+/* bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i <= led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case EXTRA:
+                rgb_matrix_set_color(i, RGB_BLUE);
+                break;
+            case NUMBERS_SYMBOLS:
+                rgb_matrix_set_color(i, RGB_YELLOW);
+                break;
+            default:
+                break;
+        }
+    }
+    return false;
+} */
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    if (get_highest_layer(layer_state) > 0) {
+        uint8_t layer = get_highest_layer(layer_state);
+
+        for (uint8_t row = 0; row < MATRIX_ROWS; ++row) {
+            for (uint8_t col = 0; col < MATRIX_COLS; ++col) {
+                uint8_t index = g_led_config.matrix_co[row][col];
+
+                if (index >= led_min && index < led_max && index != NO_LED) {
+                    if (keymap_key_to_keycode(layer, (keypos_t){col,row}) != keymap_key_to_keycode(MAC_BASE, (keypos_t){col,row})) {
+                        if (layer == EXTRA) {
+                            rgb_matrix_set_color(index, RGB_GREEN);
+                        } else {
+                            rgb_matrix_set_color(index, RGB_BLUE);
+                        }
+                    } else {
+                        rgb_matrix_set_color(index, RGB_OFF);
+                    }
+                }
+            }
+        }
+    }
+    return false;
 }
