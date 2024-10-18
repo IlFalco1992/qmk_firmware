@@ -201,14 +201,45 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                 uint8_t index = g_led_config.matrix_co[row][col];
 
                 if (index >= led_min && index < led_max && index != NO_LED) {
-                    if (keymap_key_to_keycode(layer, (keypos_t){col,row}) != keymap_key_to_keycode(MAC_BASE, (keypos_t){col,row})) {
-                        if (layer == EXTRA) {
-                            rgb_matrix_set_color(index, RGB_GREEN);
-                        } else {
-                            rgb_matrix_set_color(index, RGB_BLUE);
+                    uint16_t active_keycode = keymap_key_to_keycode(layer, (keypos_t){col,row});
+                    uint16_t default_keycode = keymap_key_to_keycode(MAC_BASE, (keypos_t){col,row});
+                    if (active_keycode != default_keycode) {
+                        switch(active_keycode){
+                            case KC_LEFT:
+                            case KC_DOWN:
+                            case KC_UP:
+                            case KC_RGHT:
+                                rgb_matrix_set_color(index, RGB_RED);
+                                break;
+                            case TG(NUMBERS_SYMBOLS):
+                                rgb_matrix_set_color(index, RGB_YELLOW);
+                                break;
+                            case KC_1:
+                            case KC_2:
+                            case KC_3:
+                            case KC_4:
+                            case KC_5:
+                            case KC_6:
+                            case KC_7:
+                            case KC_8:
+                            case KC_9:
+                            case KC_0:
+                                rgb_matrix_set_color(index, RGB_PURPLE);
+                                break;
+                            default:
+                                switch(layer) {
+                                    case EXTRA:
+                                        rgb_matrix_set_color(index, RGB_GREEN);
+                                        break;
+                                    case NUMBERS_SYMBOLS:
+                                        rgb_matrix_set_color(index, RGB_BLUE);
+                                        break;
+                                    default:
+                                        rgb_matrix_set_color(index, RGB_RED);
+                                }
                         }
                     } else {
-                        rgb_matrix_set_color(index, RGB_OFF);
+                        rgb_matrix_set_color(index, 63, 63, 63);
                     }
                 }
             }
