@@ -226,6 +226,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                             case KC_0:
                                 rgb_matrix_set_color(index, RGB_PURPLE);
                                 break;
+                            case BAT_LVL:
+                                rgb_matrix_set_color(index, RGB_GREEN);
+                                break;
                             default:
                                 switch(layer) {
                                     case EXTRA:
