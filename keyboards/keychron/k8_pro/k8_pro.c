@@ -126,6 +126,11 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
                 unregister_code(KC_2);
             }
             return false; // Skip all further processing of this key
+        case KC_TOG_NS:
+            if (record->event.pressed) {
+                layer_invert(NUMBERS_SYMBOLS);
+            }
+            return false; // Skip all further processing of this key
 #ifdef KC_BLUETOOTH_ENABLE
         case BT_HST1 ... BT_HST3:
             if (get_transport() == TRANSPORT_BLUETOOTH) {

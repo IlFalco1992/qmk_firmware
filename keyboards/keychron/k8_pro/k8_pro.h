@@ -30,6 +30,16 @@
 #endif
 
 // clang-format off
+enum layers{
+  MAC_BASE,
+  MAC_FN,
+  WIN_BASE,
+  WIN_FN,
+  EXTRA,
+  NUMBERS_SYMBOLS
+};
+
+// clang-format off
 enum {
     KC_LOPTN = USER_START,
     KC_ROPTN,
@@ -43,6 +53,7 @@ enum {
     KC_SIRI,
     LAYER_CLEAR,
     KC_EUR,
+    KC_TOG_NS,
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
     BT_HST2,
