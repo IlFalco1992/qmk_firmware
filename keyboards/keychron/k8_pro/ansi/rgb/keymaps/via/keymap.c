@@ -203,7 +203,7 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                             case KC_RGHT:
                                 rgb_matrix_set_color(index, RGB_RED);
                                 break;
-                            case TG(NUMBERS_SYMBOLS):
+                            case KC_TOG_NS:
                                 rgb_matrix_set_color(index, RGB_YELLOW);
                                 break;
                             case KC_1:
