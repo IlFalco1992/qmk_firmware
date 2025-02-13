@@ -36,7 +36,8 @@ enum layers{
   WIN_BASE,
   WIN_FN,
   EXTRA,
-  NUMBERS_SYMBOLS
+  NUMBERS_SYMBOLS,
+  MOUSE
 };
 
 // clang-format off
@@ -54,6 +55,7 @@ enum {
     LAYER_CLEAR,
     KC_EUR,
     KC_TOG_NS,
+    KC_TOG_M,
 #ifdef KC_BLUETOOTH_ENABLE
     BT_HST1,
     BT_HST2,

@@ -11,3 +11,5 @@ include keyboards/keychron/bluetooth/bluetooth.mk
 CAPS_WORD_ENABLE = yes
 
 TAP_DANCE_ENABLE = yes
+
+MOUSEKEY_ENABLE = yes

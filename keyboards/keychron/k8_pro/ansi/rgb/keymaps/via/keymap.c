@@ -79,17 +79,24 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      KC_GRV,   KC_1,         KC_2,          KC_3,         KC_4,         KC_5,      KC_6,     KC_7,       KC_8,       KC_9,        KC_0,       KC_MINS,    KC_EQL,   KC_BSPC, KC_INS,    KC_HOME,  KC_PGUP,
      KC_TAB,   KC_ESC,       KC_GRAVE,      KC_TILDE,     KC_TAB,       S(KC_TAB), KC_LPAD,  KC_U,       KC_PIPE,    KC_BSLS,     KC_BSPC,    KC_LBRC,    KC_RBRC,  KC_BSLS, KC_DEL,    KC_END,   KC_PGDN,
      KC_CAPS,  KC_LOPTN,     KC_LCMMD,      KC_LCTL,      KC_LSFT,      KC_G,      KC_LEFT,  KC_DOWN,    KC_UP,      KC_RIGHT,    KC_ENT,     KC_QUOT,              KC_ENT,
-     KC_LSFT,                KC_TOG_NS,     KC_X,         KC_C,         KC_V,      KC_B,     KC_LBRC,    KC_RBRC,    S(KC_LBRC),  S(KC_RBRC), KC_SLSH,              KC_RSFT,            KC_UP,
+     KC_LSFT,                KC_TOG_NS,     KC_TOG_M,     KC_C,         KC_V,      KC_B,     KC_LBRC,    KC_RBRC,    S(KC_LBRC),  S(KC_RBRC), KC_SLSH,              KC_RSFT,            KC_UP,
      KC_LCTL,  KC_LOPTN,     KC_LCMMD,                         LAYER_CLEAR,                                                       KC_RCMMD,   KC_ROPTN, MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
 [NUMBERS_SYMBOLS] = LAYOUT_tkl_ansi(
-     KC_ESC,   KC_BRID,    KC_BRIU,      KC_MCTL, KC_LPAD,   RGB_VAD,    RGB_VAI,       KC_MPRV,      KC_MPLY,     KC_MNXT,    KC_MUTE,    KC_VOLD,       KC_VOLU,                KC_SNAP,   RGB_TOG,  KC_LOCK,
-     KC_GRV,   KC_1,       KC_2,         KC_3,    KC_4,      KC_5,       KC_6,          KC_7,         KC_8,        KC_9,       KC_0,       KC_MINS,       KC_EQL,       KC_BSPC,  KC_INS,    KC_HOME,  KC_PGUP,
-     KC_TAB,   KC_1,       KC_2,         KC_3,    KC_4,      KC_5,       KC_6,          KC_7,         KC_8,        KC_9,       KC_0,       KC_MINS,       KC_EQL,       KC_BSLS,  KC_DEL,    KC_END,   KC_PGDN,
-     KC_CAPS,  KC_EXCLAIM, KC_AT,        KC_HASH, KC_DOLLAR, KC_PERCENT, KC_CIRCUMFLEX, KC_AMPERSAND, KC_ASTERISK, KC_LPRN,    KC_RPRN,    KC_UNDERSCORE,               KC_PLUS,
-     KC_LSFT,              KC_TOG_NS,    KC_X,    KC_C,      KC_EUR,     KC_B,          KC_N,         KC_M,        KC_COMM,    KC_DOT,     KC_SLSH,                     KC_RSFT,             KC_UP,
-     KC_LCTL,  KC_LOPTN,   KC_LCMMD,                               LAYER_CLEAR,                                                KC_RCMMD,   KC_ROPTN,      MO(MAC_FN),   KC_RCTL,  KC_LEFT,  KC_DOWN,   KC_RGHT),
+     KC_ESC,   KC_BRID,    KC_BRIU,      KC_MCTL,  KC_LPAD,   RGB_VAD,    RGB_VAI,       KC_MPRV,      KC_MPLY,     KC_MNXT,    KC_MUTE,    KC_VOLD,       KC_VOLU,                KC_SNAP,   RGB_TOG,  KC_LOCK,
+     KC_GRV,   KC_1,       KC_2,         KC_3,     KC_4,      KC_5,       KC_6,          KC_7,         KC_8,        KC_9,       KC_0,       KC_MINS,       KC_EQL,       KC_BSPC,  KC_INS,    KC_HOME,  KC_PGUP,
+     KC_TAB,   KC_1,       KC_2,         KC_3,     KC_4,      KC_5,       KC_6,          KC_7,         KC_8,        KC_9,       KC_0,       KC_MINS,       KC_EQL,       KC_BSLS,  KC_DEL,    KC_END,   KC_PGDN,
+     KC_CAPS,  KC_EXCLAIM, KC_AT,        KC_HASH,  KC_DOLLAR, KC_PERCENT, KC_CIRCUMFLEX, KC_AMPERSAND, KC_ASTERISK, KC_LPRN,    KC_RPRN,    KC_UNDERSCORE,               KC_PLUS,
+     KC_LSFT,              KC_TOG_NS,    KC_TOG_M, KC_C,      KC_EUR,     KC_B,          KC_N,         KC_M,        KC_COMM,    KC_DOT,     KC_SLSH,                     KC_RSFT,             KC_UP,
+     KC_LCTL,  KC_LOPTN,   KC_LCMMD,                                LAYER_CLEAR,                                                KC_RCMMD,   KC_ROPTN,      MO(MAC_FN),   KC_RCTL,  KC_LEFT,  KC_DOWN,   KC_RGHT),
 
+[MOUSE] = LAYOUT_tkl_ansi(
+     KC_ESC,   KC_BRID,      KC_BRIU,       KC_MCTL,      KC_LPAD,      RGB_VAD,   RGB_VAI,    KC_MPRV,      KC_MPLY,    KC_MNXT,     KC_MUTE,    KC_VOLD,    KC_VOLU,           KC_SNAP,   RGB_TOG,  KC_LOCK,
+     KC_GRV,   KC_1,         KC_2,          KC_3,         KC_4,         KC_5,      KC_6,       KC_7,         KC_8,       KC_9,        KC_0,       KC_MINS,    KC_EQL,   KC_BSPC, KC_INS,    KC_HOME,  KC_PGUP,
+     KC_TAB,   KC_ESC,       KC_GRAVE,      KC_TILDE,     KC_TAB,       S(KC_TAB), KC_LPAD,    KC_U,         KC_PIPE,    KC_BSLS,     KC_BSPC,    KC_LBRC,    KC_RBRC,  KC_BSLS, KC_DEL,    KC_END,   KC_PGDN,
+     KC_CAPS,  KC_MS_BTN1,   KC_MS_BTN2,    KC_LCTL,      KC_LSFT,      KC_G,      KC_MS_LEFT, KC_MS_DOWN,   KC_MS_UP,   KC_MS_RIGHT, KC_ENT,     KC_QUOT,              KC_ENT,
+     KC_LSFT,                KC_TOG_NS,     KC_TOG_M,     KC_C,         KC_V,      KC_B,       KC_LBRC,      KC_RBRC,    S(KC_LBRC),  S(KC_RBRC), KC_SLSH,              KC_RSFT,            KC_UP,
+     KC_LCTL,  KC_LOPTN,     KC_LCMMD,                         LAYER_CLEAR,                                                           KC_RCMMD,   KC_ROPTN, MO(MAC_FN), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 };
 
 /*const uint16_t PROGMEM left_arrow_combo[] = {KC_Q, KC_H, COMBO_END};
@@ -205,6 +212,9 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                                 break;
                             case KC_TOG_NS:
                                 rgb_matrix_set_color(index, RGB_YELLOW);
+                                break;
+                            case KC_TOG_M:
+                                rgb_matrix_set_color(index, RGB_ORANGE);
                                 break;
                             case KC_1:
                             case KC_2:
