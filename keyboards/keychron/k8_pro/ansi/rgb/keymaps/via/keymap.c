@@ -228,12 +228,18 @@ bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
                             case KC_0:
                                 rgb_matrix_set_color(index, RGB_PURPLE);
                                 break;
-                            case BAT_LVL:
-                                rgb_matrix_set_color(index, RGB_GREEN);
+                            case KC_MS_BTN1:
+                            case KC_MS_BTN2:
+                            case KC_MS_LEFT:
+                            case KC_MS_DOWN:
+                            case KC_MS_UP:
+                            case KC_MS_RIGHT:
+                                rgb_matrix_set_color(index, RGB_SPRINGGREEN);
                                 break;
                             default:
                                 switch(layer) {
                                     case EXTRA:
+                                    case MOUSE:
                                         rgb_matrix_set_color(index, RGB_GREEN);
                                         break;
                                     case NUMBERS_SYMBOLS:
